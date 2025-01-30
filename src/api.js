@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:5000/api";
+
+
+const API_URL = "https://portfolio-backend-one-sigma.vercel.app/api"
 
 const fetchAPI = async (url) => {
   try {
