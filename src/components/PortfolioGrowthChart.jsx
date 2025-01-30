@@ -59,6 +59,8 @@ const PortfolioGrowthChart = () => {
         return pointDate >= new Date(now.setMonth(now.getMonth() - 3));
       } else if (filter === "1Y") {
         return pointDate >= new Date(now.setFullYear(now.getFullYear() - 1));
+      } else if (filter === "all") {
+        return true;
       }
       return true;
     });
@@ -106,6 +108,7 @@ const PortfolioGrowthChart = () => {
         <option value="1M">Last Month</option>
         <option value="3M">Last 3 Months</option>
         <option value="1Y">Last Year</option>
+        <option value="all">All Time</option>
       </select>
       <div className="h-64">
         <Line data={data} options={options} />
@@ -115,4 +118,5 @@ const PortfolioGrowthChart = () => {
 };
 
 export default PortfolioGrowthChart;
+
 
