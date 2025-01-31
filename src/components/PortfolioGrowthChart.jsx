@@ -2,6 +2,7 @@ import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import { fetchPortfolioGrowth } from "../api";
 import "chart.js/auto";
+import { OrbitProgress } from "react-loading-indicators";
 
 const PortfolioGrowthChart = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -10,7 +11,7 @@ const PortfolioGrowthChart = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedFilter, setSelectedFilter] = useState("1M"); // Default filter
+  const [selectedFilter, setSelectedFilter] = useState("all");
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -81,9 +82,8 @@ const PortfolioGrowthChart = () => {
 
   if (loading) {
     return (
-      <div className="p-4 rounded-lg shadow bg-gray-800 text-white">
-        <h2 className="text-lg font-semibold mb-4">Portfolio Growth</h2>
-        <p>Loading...</p>
+      <div className="p-4 rounded-lg shadow bg-gray-800 text-white flex items-center justify-center h-64">
+        <OrbitProgress variant="track-disc" dense color="#32cd32" size="medium" text="" textColor="" />
       </div>
     );
   }
@@ -118,5 +118,4 @@ const PortfolioGrowthChart = () => {
 };
 
 export default PortfolioGrowthChart;
-
 

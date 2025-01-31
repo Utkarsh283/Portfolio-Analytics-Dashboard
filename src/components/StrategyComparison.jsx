@@ -2,6 +2,7 @@ import { Bar } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import { fetchStrategyPerformance } from "../api";
 import "chart.js/auto";
+import { OrbitProgress } from "react-loading-indicators";
 
 const StrategyComparison = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -60,8 +61,8 @@ const StrategyComparison = () => {
 
   if (!chartData) {
     return (
-      <div className="p-4 bg-white dark:bg-dark rounded-lg shadow-md">
-        <p className="text-center text-gray-600 dark:text-white">Loading...</p>
+      <div className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md h-64">
+        <OrbitProgress variant="track-disc" dense color="#32cd32" size="medium" text="" textColor="" />
       </div>
     );
   }
@@ -116,4 +117,5 @@ const StrategyComparison = () => {
 };
 
 export default StrategyComparison;
+
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchMarketUpdates } from "../api";
+import { OrbitProgress } from "react-loading-indicators";
 
 const MarketUpdates = () => {
   const [updates, setUpdates] = useState([]);
@@ -23,9 +24,8 @@ const MarketUpdates = () => {
 
   if (loading) {
     return (
-      <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-        <h2 className="text-xl font-bold mb-2">📢 Market Updates</h2>
-        <p>Loading...</p>
+      <div className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <OrbitProgress variant="track-disc" dense color="#32cd32" size="medium" text="" textColor="" />
       </div>
     );
   }
@@ -64,3 +64,5 @@ const MarketUpdates = () => {
 };
 
 export default MarketUpdates;
+
+

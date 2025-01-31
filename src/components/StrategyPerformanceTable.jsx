@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchStrategyPerformance } from "../api";
+import { OrbitProgress } from "react-loading-indicators";
 
 const StrategyPerformanceTable = () => {
   const [strategies, setStrategies] = useState([]);
@@ -23,8 +24,8 @@ const StrategyPerformanceTable = () => {
 
   if (loading) {
     return (
-      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
-        <p className="text-center text-gray-600 dark:text-gray-400">Loading...</p>
+      <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md flex items-center justify-center">
+        <OrbitProgress variant="track-disc" dense color="#32cd32" size="medium" text=" " textColor="" />
       </div>
     );
   }
@@ -72,3 +73,4 @@ const StrategyPerformanceTable = () => {
 };
 
 export default StrategyPerformanceTable;
+

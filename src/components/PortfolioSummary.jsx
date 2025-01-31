@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchPortfolioSummary } from "../api";
+import { OrbitProgress } from "react-loading-indicators";
 
 const PortfolioSummary = () => {
   const [summary, setSummary] = useState(null);
@@ -23,8 +24,8 @@ const PortfolioSummary = () => {
 
   if (loading) {
     return (
-      <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-        <p className="text-center text-gray-600 dark:text-gray-400">Loading...</p>
+      <div className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+        <OrbitProgress variant="track-disc" dense color="#32cd32" size="medium" text="" textColor="" />
       </div>
     );
   }
@@ -57,3 +58,5 @@ const PortfolioSummary = () => {
 };
 
 export default PortfolioSummary;
+
+

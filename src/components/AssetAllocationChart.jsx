@@ -2,6 +2,7 @@ import { Pie } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import { fetchAssetAllocation } from "../api";
 import "chart.js/auto";
+import  {OrbitProgress}  from "react-loading-indicators"; 
 
 const AssetAllocationChart = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -76,9 +77,8 @@ const AssetAllocationChart = () => {
 
   if (loading) {
     return (
-      <div className="p-4 bg-gray-800 text-white rounded-lg shadow">
-        <h2 className="text-lg font-semibold mb-4">Asset Allocation</h2>
-        <p>Loading...</p>
+      <div className="flex items-center justify-center h-full">
+        <OrbitProgress variant="track-disc" dense color="#32cd32" size="medium" text="" textColor="" />
       </div>
     );
   }
