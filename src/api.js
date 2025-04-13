@@ -1,6 +1,6 @@
 
 
-const API_URL = "https://portfolio-backend-one-sigma.vercel.app/api"
+const API_URL = "https://portfolio-backend-three-chi.vercel.app/api"
 
 const fetchAPI = async (url) => {
   try {
